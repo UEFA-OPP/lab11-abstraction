@@ -1,11 +1,13 @@
 public class Stealth extends Skill {
 
-    // TODO: Constructor бичнэ үү
-    // public Stealth()
-    // - super("Stealth", 10) дуудна
+    public Stealth() {
+        super("Stealth", 10);
+    }
 
-    // TODO: @Override cast(Character caster, Character target) → void
-    // - Хохирол учруулахгүй (харанхуйд нуугдана)
-    // - caster.mp -= 10
+    @Override
+    public void cast(Character caster, Character target) {
+        if (caster == null) return;
 
+        caster.mp -= 10;
+    }
 }

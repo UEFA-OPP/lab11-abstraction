@@ -1,11 +1,14 @@
 public class Heal extends Skill {
 
-    // TODO: Constructor бичнэ үү
-    // public Heal()
-    // - super("Heal", 20) дуудна
+    public Heal() {
+        super("Heal", 20);
+    }
 
-    // TODO: @Override cast(Character caster, Character target) → void
-    // - caster.heal(30) (target-ийг үл тоомсорлоно)
-    // - caster.mp -= 20
+    @Override
+    public void cast(Character caster, Character target) {
+        if (caster == null) return;
 
+        caster.heal(30);
+        caster.mp -= 20;
+    }
 }
