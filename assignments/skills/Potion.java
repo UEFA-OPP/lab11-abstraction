@@ -1,6 +1,7 @@
 public class Potion implements Usable {
-
-    // TODO: @Override use(Character user) → void
-    // - user.heal(50)
-
+    @Override
+    public void use(Character user) {
+        user.heal(50);
+        System.out.println(user.name + " used a Potion and recovered 50 HP!");
+    }
 }

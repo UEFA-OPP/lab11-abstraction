@@ -1,20 +1,30 @@
 public abstract class Skill {
 
-    // TODO: Skill класс нь abstract байх ёстой (эхний мөр дээр зарласан)
+    // Талбарууд: Дэд ангиуд болон нэг package доторх классууд хандах боломжтой
+    protected String name;
+    protected int mpCost;
 
-    // TODO: Талбарууд зарлана уу
-    // - protected String name
-    // - protected int mpCost
+    // Байгуулагч функц (Constructor)
+    public Skill(String name, int mpCost) {
+        this.name = name;
+        this.mpCost = mpCost;
+    }
 
-    // TODO: Constructor бичнэ үү
-    // public Skill(String name, int mpCost)
-    // - this.name = name; this.mpCost = mpCost;
+    /**
+     * Абстракт метод: Ур чадварыг ашиглах логик.
+     * Энэ методыг Skill-ээс удамшсан дэд ангиуд заавал хэрэгжүүлэх ёстой.
+     *
+     * @param caster Ур чадварыг ашиглаж буй дүр
+     * @param target Ур чадварт өртөж буй дүр
+     */
+    public abstract void cast(Character caster, Character target);
 
-    // TODO: Abstract method зарлана уу
-    // public abstract void cast(Character caster, Character target);
-    // - Хэрэгжүүлэлт байхгүй — дэд анги хэрэгжүүлнэ
+    // Getter методууд
+    public String getName() {
+        return name;
+    }
 
-    // TODO: getName() → String
-    // TODO: getMpCost() → int
-
+    public int getMpCost() {
+        return mpCost;
+    }
 }
