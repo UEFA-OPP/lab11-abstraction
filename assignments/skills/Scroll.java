@@ -1,6 +1,7 @@
 public class Scroll implements Usable {
+    @Override
+    public void use(Character user) {
 
-    // TODO: @Override use(Character user) → void
-    // - user.mp += 30 (MP сэргээнэ)
-
+        user.mp += 30;
+    }
 }
