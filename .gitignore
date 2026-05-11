@@ -1,3 +1,35 @@
+<<<<<<< HEAD
+### IntelliJ IDEA ###
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+.kotlin
+
+### Eclipse ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### VS Code ###
+.vscode/
+
+### Mac OS ###
+.DS_Store
+=======
 # Compiled class files
 *.class
 
@@ -28,3 +60,4 @@ Thumbs.db
 # Temporary files
 *.tmp
 *.log
+>>>>>>> 3b5c990d4193e1fcb2ddd05263fa2ee291d3c19b
