@@ -1,11 +1,10 @@
+
+
 public interface Usable {
+    void use(Character user);
 
-    // TODO: Abstract method зарлана уу
-    // void use(Character user);
-
-    // ─────── 🔴 Bonus ───────
-    // TODO: default void announce() → хэвлэнэ "Using item"
-    // - default түлхүүр үгтэй — interface доторх үндсэн хэрэгжүүлэлт
-    // - Дэд ангиуд override хийх боломжтой
-
+    // 🔴 Bonus: Default method
+    default void announce() {
+        System.out.println("Using item");
+    }
 }
