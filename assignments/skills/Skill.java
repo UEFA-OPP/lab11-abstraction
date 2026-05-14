@@ -1,20 +1,17 @@
+
+
 public abstract class Skill {
+    protected String name;
+    protected int mpCost;
 
-    // TODO: Skill класс нь abstract байх ёстой (эхний мөр дээр зарласан)
+    public Skill(String name, int mpCost) {
+        this.name = name;
+        this.mpCost = mpCost;
+    }
 
-    // TODO: Талбарууд зарлана уу
-    // - protected String name
-    // - protected int mpCost
+    // Abstract method: Body-гүй, дэд ангиуд заавал override хийнэ
+    public abstract void cast(Character caster, Character target);
 
-    // TODO: Constructor бичнэ үү
-    // public Skill(String name, int mpCost)
-    // - this.name = name; this.mpCost = mpCost;
-
-    // TODO: Abstract method зарлана уу
-    // public abstract void cast(Character caster, Character target);
-    // - Хэрэгжүүлэлт байхгүй — дэд анги хэрэгжүүлнэ
-
-    // TODO: getName() → String
-    // TODO: getMpCost() → int
-
+    public String getName() { return name; }
+    public int getMpCost() { return mpCost; }
 }
