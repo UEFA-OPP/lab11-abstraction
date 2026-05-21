@@ -1,5 +1,6 @@
-public class Character {
+package assignments.skills;
 
+public class Character {
     public String name;
     public int hp;
     public int mp;
@@ -11,10 +12,11 @@ public class Character {
     }
 
     public void takeDamage(int amount) {
-        this.hp = Math.max(0, this.hp - amount);
+        this.hp -= amount;
+        if (this.hp < 0) this.hp = 0;
     }
 
     public void heal(int amount) {
-        this.hp = this.hp + amount;
+        this.hp += amount;
     }
 }
