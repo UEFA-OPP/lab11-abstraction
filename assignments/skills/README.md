@@ -43,8 +43,8 @@ public abstract class Skill {
 ```
 
 - **`abstract`** түлхүүр үг class declaration-д байх ёстой
-- `cast` method нь **body-гүй abstract** — "яаж хийх" нь дэд ангид
-- Шууд `new Skill(...)` гэж instance үүсгэх боломжгүй (тест reflection-оор шалгана)
+  - `cast` method нь **body-гүй abstract** — "яаж хийх" нь дэд ангид
+  - Шууд `new Skill(...)` гэж instance үүсгэх боломжгүй (тест reflection-оор шалгана)
 
 ### 2. `Fireball extends Skill`
 
@@ -65,13 +65,13 @@ public class Fireball extends Skill {
 ### 3. `Heal extends Skill`
 
 - name = `"Heal"`, mpCost = `20`
-- `cast` → `caster.heal(30)`, `caster.mp -= 20`
-- `target` параметрийг үл тоомсорлоно (API-ийн төлөө зөвхөн)
+  - `cast` → `caster.heal(30)`, `caster.mp -= 20`
+  - `target` параметрийг үл тоомсорлоно (API-ийн төлөө зөвхөн)
 
 ### 4. `Stealth extends Skill`
 
 - name = `"Stealth"`, mpCost = `10`
-- `cast` → хохирол учруулахгүй, `caster.mp -= 10` л болно
+  - `cast` → хохирол учруулахгүй, `caster.mp -= 10` л болно
 
 ### 5. Skill шууд instantiate хийх боломжгүй
 
@@ -97,7 +97,7 @@ public interface Usable {
 ```
 
 - **`interface`** түлхүүр үг
-- Method автоматаар `public abstract`
+  - Method автоматаар `public abstract`
 
 ### 8. `Potion implements Usable`
 
@@ -124,8 +124,8 @@ public interface Usable {
 ```
 
 - **`default`** түлхүүр үг — interface доторх хэрэгжүүлэлт
-- Дэд анги override хийж болно
-- Тест: `Usable u = new Potion(); u.announce();` — алдаагүй ажиллах ёстой
+  - Дэд анги override хийж болно
+  - Тест: `Usable u = new Potion(); u.announce();` — алдаагүй ажиллах ёстой
 
 ### 11. Class which extends Skill AND implements Usable
 
@@ -173,29 +173,29 @@ bash scripts/run_tests.sh --tag bonus
 
 ### Core
 - [ ] `Skill` нь `abstract class`
-- [ ] `Skill.cast` нь abstract method
-- [ ] `Fireball` — 30 mp, target takes 40
-- [ ] `Heal` — 20 mp, caster.heal(30)
-- [ ] `Stealth` — 10 mp, no damage
-- [ ] 3 дэд анги тус бүр `cast` override
+  - [ ] `Skill.cast` нь abstract method
+  - [ ] `Fireball` — 30 mp, target takes 40
+  - [ ] `Heal` — 20 mp, caster.heal(30)
+  - [ ] `Stealth` — 10 mp, no damage
+  - [ ] 3 дэд анги тус бүр `cast` override
 
 ### Stretch
 - [ ] `Usable` нь interface
-- [ ] `Potion.use` heals 50
-- [ ] `Scroll.use` restores mp 30
+  - [ ] `Potion.use` heals 50
+  - [ ] `Scroll.use` restores mp 30
 
 ### Bonus
 - [ ] `Usable.announce` default method
-- [ ] `HealingPotionSkill extends Skill implements Usable`
+  - [ ] `HealingPotionSkill extends Skill implements Usable`
 
 ---
 
 ## 🚫 Түгээмэл алдаанууд
 
 1. **`abstract` орхих** — `class Skill` нь instantiate хийгдэж болно, тест унана
-2. **`cast`-д body бичих** — abstract method нь body-гүй (`;` гэж л төгсгөнө)
-3. **`interface`-ийн оронд `class` бичих** — `Usable` нь `interface` байх ёстой
-4. **`implements` орхих** — `class Potion {}` биш `class Potion implements Usable {}`
-5. **Constructor-д `super(...)` орхих** — parent-ын constructor дуудагдахгүй
-6. **Default method-д `default` үг орхих** — энгийн abstract method болж буцна
-7. **`Character.java`-г өөрчлөх** — өгөгдсөн, хөндөхгүй
+   2. **`cast`-д body бичих** — abstract method нь body-гүй (`;` гэж л төгсгөнө)
+   3. **`interface`-ийн оронд `class` бичих** — `Usable` нь `interface` байх ёстой
+   4. **`implements` орхих** — `class Potion {}` биш `class Potion implements Usable {}`
+   5. **Constructor-д `super(...)` орхих** — parent-ын constructor дуудагдахгүй
+   6. **Default method-д `default` үг орхих** — энгийн abstract method болж буцна
+   7. **`Character.java`-г өөрчлөх** — өгөгдсөн, хөндөхгүй
